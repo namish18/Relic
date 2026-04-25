@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Font Faces */
+@font-face {
+  font-family: 'Cal Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/cal-sans@latest/latin-400-normal.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Matter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Matter Regular'), local('Matter-Regular');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Satoshi Medium'), local('Satoshi-Medium');
+}
+
+:root {
+  --background: #F9F8F6;
+  --foreground: #1D1C1A;
+  --card: #FFFFFF;
+  --card-foreground: #1D1C1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1D1C1A;
+  --primary: #CFA65E;
+  --primary-foreground: #1D1C1A;
+  --secondary: #E9E6df;
+  --secondary-foreground: #1D1C1A;
+  --muted: #E2E0D8;
+  --muted-foreground: #6B6965;
+  --accent: #E2E0D8;
+  --accent-foreground: #1D1C1A;
+  --destructive: #df5846;
+  --destructive-foreground: #F9F8F6;
+  --border: #E2E0D8;
+  --input: #E2E0D8;
+  --ring: #CFA65E;
+  --radius: 0rem;
+}
+
+.dark {
+  --background: #111111;
+  --foreground: #F2F0EB;
+  --card: #181716;
+  --card-foreground: #F2F0EB;
+  --popover: #181716;
+  --popover-foreground: #F2F0EB;
+  --primary: #D4AF67;
+  --primary-foreground: #111111;
+  --secondary: #2B2A28;
+  --secondary-foreground: #F2F0EB;
+  --muted: #2B2A28;
+  --muted-foreground: #A19F9A;
+  --accent: #2B2A28;
+  --accent-foreground: #F2F0EB;
+  --destructive: #df5846;
+  --destructive-foreground: #F2F0EB;
+  --border: #2B2A28;
+  --input: #2B2A28;
+  --ring: #D4AF67;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius);
+  --font-sans: "Cal Sans", "Satoshi", "Matter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant);
+}
+
+* {
+  @apply border-border;
+}
+body {
+  @apply bg-background text-foreground;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+::selection {
+  @apply bg-primary/30 text-primary-foreground;
+}
