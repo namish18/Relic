@@ -10,14 +10,30 @@ const authMiddleware = async (req, res, next) => {
 
   const token = authHeader.split(' ')[1];
 
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
-  const user = await User.findOne({ walletAddress: decoded.walletAddress });
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch {
+    return res.status(401).json({ message: 'Invalid or expired token' });
+  }
+
+  const query = decoded.walletAddress
+    ? { walletAddress: decoded.walletAddress }
+    : { email: decoded.email };
+
+  const user = await User.findOne(query);
 
   if (!user) {
     return res.status(401).json({ message: 'User not found' });
   }
 
-  req.user = user;
+  req.user = {
+    _id: user._id,
+    walletAddress: user.walletAddress || null,
+    email: user.email || null,
+    worldIdVerified: user.worldIdVerified,
+  };
+
   next();
 };
 
