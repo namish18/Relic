@@ -106,28 +106,6 @@ graph TD
 - **Zero-Friction:** Claims via email-linked Privy wallets—no crypto knowledge required.
 - **Gas Abstraction:** MoonPay allows beneficiaries to cover gas fees with a credit card.
 
----
-
-## 7. Success Metrics & Goals
-- **10/10 Integration:** Full utilization of all 10 Frontier sponsors.
-- **Zero-Knowledge Recovery:** Non-custodial throughout; Relic never holds user funds.
-- **Performance:** Sub-2s latency for check-ins; < $0.01 gas for owners.
-
----
-
-## 8. Team & Prize Strategy
-Relic is targeting the following awards at the Colosseum Frontier Hackathon 2026:
-- ** Grand Champion ($30K):** For solving a $140B problem with 100% sponsor coverage.
-- ** University Award ($10K):** Built by a student-led team.
-- ** Public Goods Award ($10K):** Essential infrastructure for the Solana ecosystem.
-
----
-
-## 9. 22-Day Execution Roadmap
-- **Week 1:** Repo setup, Anchor scaffolding, Phantom SIWS, and Altitude Multi-sig.
-- **Week 2:** Arcium MXE integration, Reflect Yield vaults, and Metaplex detection.
-- **Week 3:** Raydium swaps, Privy portal, MoonPay gas rails, and World ID verification.
-- **Final Days:** UI polish, E2E testing, and Demo Video production.
 
 ---
 
