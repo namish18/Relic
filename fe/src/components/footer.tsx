@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import footerSolanaImg from "../../public/footer-solana.png"; // Imported footer background image
+import footerSolanaImg from "../../public/footer-solana.png";
 
 const SocialIcon = ({ d }: { d: string }) => (
   <svg
@@ -41,77 +41,121 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative bg-black text-white py-32 overflow-hidden min-h-[700px] flex items-center">
+    <>
+      {/*
+        ─── PREMIUM CURVED DIVIDER ──────────────────────────────────────────
+        Lives ABOVE the footer as a sibling, overlaps the footer from the top.
+        The black filled SVG path rises from below into the page section above,
+        creating the illusion that the footer has a curved top boundary.
+        The footer image then starts cleanly from below the curve's lowest point.
 
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={footerSolanaImg}
-          alt="Relic Coin Background"
-          fill
-          sizes="100vw"
-          className="object-cover object-[center_70%] brightness-75"
-          priority
-        />
-
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black z-[1]" />
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 flex flex-col items-center relative z-10 w-full">
-
-        {/* Heading */}
-        <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-[#D4AF67] drop-shadow-2xl">
-          Stay Relic
-        </h2>
-
-        <p className="text-zinc-200 text-lg md:text-xl mb-12 text-center max-w-2xl font-medium drop-shadow-md">
-          Join Relic's Inner Circle for Exclusive Updates & Alpha.
-        </p>
-
-        {/* Input */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mb-32 w-full max-w-2xl">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="w-full bg-black/60 backdrop-blur-md border border-[#D4AF67]/40 rounded-full px-8 py-4 text-white focus:outline-none focus:border-[#D4AF67] transition-colors placeholder:text-zinc-400"
+        HOW IT WORKS:
+        - This div is 100px tall, positioned normally in flow
+        - The SVG fills from the curve down to the bottom (footer color: black)
+        - The footer has a negative marginTop to pull up under the SVG seamlessly
+        - Result: curved top edge on the image footer, zero hacks
+        ────────────────────────────────────────────────────────────────────
+      */}
+      <div className="relative w-full pointer-events-none" style={{ height: '100px', zIndex: 10 }}>
+        <svg
+          viewBox="0 0 1440 100"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          className="absolute inset-0 w-full h-full"
+          aria-hidden="true"
+        >
+          {/*
+            Premium single-sweep convex curve:
+            Starts low on the edges, and bulges upward smoothly into the section above.
+            Creates a highly elegant, luxurious dome/arch Web3 feel.
+          */}
+          <path
+            d="M0,100 L0,80 C 400,10 1000,-30 1440,60 L1440,100 Z"
+            fill="#000000"
           />
-
-          <button className="bg-gradient-to-r from-[#D4AF67] to-[#A67C37] text-black font-bold px-10 py-4 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap shadow-xl">
-            Subscribe Now
-          </button>
-        </div>
-
-        {/* Socials */}
-        <div className="flex items-center gap-5 mb-14">
-          {socialLinks.map((social) => (
-            <Link
-              key={social.name}
-              href={social.href}
-              className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 bg-black/30 backdrop-blur-md text-[#D4AF67] hover:bg-[#D4AF67]/10 hover:border-[#D4AF67]/50 transition-all"
-            >
-              <SocialIcon d={social.d} />
-            </Link>
-          ))}
-        </div>
-
-        {/* Nav */}
-        <nav className="flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm font-medium text-zinc-300 mb-12">
-          <Link href="/" className="hover:text-[#D4AF67]">Home</Link>
-          <Link href="/#features" className="hover:text-[#D4AF67]">Product</Link>
-          <Link href="/docs" className="hover:text-[#D4AF67]">About</Link>
-          <Link href="#" className="hover:text-[#D4AF67]">Blog</Link>
-          <Link href="#" className="hover:text-[#D4AF67]">Team</Link>
-        </nav>
-
-        {/* Divider */}
-        <div className="w-full h-[1px] bg-[#D4AF67]/20 mb-8 max-w-4xl" />
-
-        {/* Copyright */}
-        <p className="text-zinc-400 text-sm text-center">
-          © 2026 Relic. All rights reserved.
-        </p>
+          {/* Gold hairline accent tracing the wave */}
+          <path
+            d="M0,80 C 400,10 1000,-30 1440,60"
+            fill="none"
+            stroke="#D4AF67"
+            strokeWidth="1.5"
+            strokeOpacity="0.35"
+          />
+        </svg>
       </div>
-    </footer>
+
+      <footer
+        className="relative bg-black text-white py-24 overflow-hidden min-h-[500px] flex items-center"
+        style={{ marginTop: '-2px' }}
+      >
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={footerSolanaImg}
+            alt="Relic Coin Background"
+            fill
+            sizes="100vw"
+            className="object-cover object-[center_70%] brightness-75"
+            priority
+          />
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black z-[1]" />
+        </div>
+
+        <div className="max-w-6xl mx-auto px-6 flex flex-col items-center relative z-10 w-full">
+
+          {/* Heading */}
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-[#D4AF67] drop-shadow-2xl">
+            Stay Relic
+          </h2>
+
+          <p className="text-zinc-200 text-lg md:text-xl mb-12 text-center max-w-2xl font-medium drop-shadow-md">
+            Join Relic&apos;s Inner Circle for Exclusive Updates &amp; Alpha.
+          </p>
+
+          {/* Email Input */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 mb-16 w-full max-w-2xl">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full bg-black/60 backdrop-blur-md border border-[#D4AF67]/40 rounded-full px-8 py-4 text-white focus:outline-none focus:border-[#D4AF67] transition-colors placeholder:text-zinc-400"
+            />
+            <button className="bg-gradient-to-r from-[#D4AF67] to-[#A67C37] text-black font-bold px-10 py-4 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap shadow-xl">
+              Subscribe Now
+            </button>
+          </div>
+
+          {/* Socials */}
+          <div className="flex items-center gap-5 mb-14">
+            {socialLinks.map((social) => (
+              <Link
+                key={social.name}
+                href={social.href}
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 bg-black/30 backdrop-blur-md text-[#D4AF67] hover:bg-[#D4AF67]/10 hover:border-[#D4AF67]/50 transition-all"
+              >
+                <SocialIcon d={social.d} />
+              </Link>
+            ))}
+          </div>
+
+          {/* Nav */}
+          <nav className="flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm font-medium text-zinc-300 mb-12">
+            <Link href="/" className="hover:text-[#D4AF67]">Home</Link>
+            <Link href="/#features" className="hover:text-[#D4AF67]">Product</Link>
+            <Link href="/docs" className="hover:text-[#D4AF67]">About</Link>
+            <Link href="#" className="hover:text-[#D4AF67]">Blog</Link>
+            <Link href="#" className="hover:text-[#D4AF67]">Team</Link>
+          </nav>
+
+          {/* Divider */}
+          <div className="w-full h-[1px] bg-[#D4AF67]/20 mb-8 max-w-4xl" />
+
+          {/* Copyright */}
+          <p className="text-zinc-400 text-sm text-center">
+            © 2026 Relic. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </>
   );
 }

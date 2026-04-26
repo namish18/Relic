@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Lock, ShieldCheck, Zap } from "lucide-react";
 import React, { useRef } from "react";
 import Image from "next/image";
-import { LiquidChrome } from "./liquid-chrome";
+import Threads from "./Threads";
 
 export function Hero() {
   const ref = useRef(null);
@@ -22,14 +22,14 @@ export function Hero() {
       {/* Abstract Background Design */}
       <motion.div 
         style={{ opacity }}
-        className="absolute inset-0 pointer-events-none z-0"
+        className="absolute inset-0 z-0"
       >
         <div className="absolute inset-0 opacity-40">
-           <LiquidChrome
-              baseColor={[0.81, 0.65, 0.37]}
-              speed={0.15}
-              amplitude={0.3}
-              interactive={true}
+           <Threads
+              color={[0.81, 0.65, 0.37]}
+              amplitude={1.2}
+              distance={0}
+              enableMouseInteraction={true}
            />
         </div>
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten opacity-50" />
@@ -37,13 +37,13 @@ export function Hero() {
         
       </motion.div>
 
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center z-10 relative pointer-events-none">
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl"
+          className="max-w-2xl pointer-events-auto"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium">
             <span className="relative flex h-2 w-2">
@@ -85,7 +85,7 @@ export function Hero() {
         {/* Visual / Interactive element */}
         <motion.div
            style={{ y: y1 }}
-           className="hidden lg:flex justify-center items-center relative"
+           className="hidden lg:flex justify-center items-center relative pointer-events-auto"
         >
           <div className="relative w-full aspect-square md:aspect-auto">
             <Image 

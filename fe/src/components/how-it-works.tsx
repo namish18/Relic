@@ -69,12 +69,12 @@ export function HowItWorks() {
             </div>
           </div>
           
-          <div className="relative hidden lg:block h-full min-h-[600px] border border-border rounded-none bg-card overflow-hidden">
+          <div className="relative hidden lg:block h-full min-h-[600px] border border-border rounded-3xl bg-card overflow-hidden">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E0D8_1px,transparent_1px),linear-gradient(to_bottom,#E2E0D8_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#2B2A28_1px,transparent_1px),linear-gradient(to_bottom,#2B2A28_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/20 rounded-full blur-[100px]" />
             
             {/* Mockup UI Panel */}
-            <div className="absolute inset-12 border border-border/50 rounded-none bg-background/50 backdrop-blur-sm flex flex-col p-6 shadow-2xl">
+            <div className="absolute inset-12 border border-border/50 rounded-2xl bg-background/50 backdrop-blur-sm flex flex-col p-6 shadow-2xl">
                <div className="flex items-center gap-2 border-b border-border/50 pb-4 mb-4">
                  <div className="w-3 h-3 rounded-full bg-destructive/80" />
                  <div className="w-3 h-3 rounded-full bg-amber-500/80" />

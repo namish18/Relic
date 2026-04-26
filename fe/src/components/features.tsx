@@ -83,7 +83,7 @@ export function Features() {
             <motion.div
               key={idx}
               variants={item as any}
-              className="p-8 rounded-none bg-card border border-border hover:border-primary/50 transition-colors group flex flex-col items-start text-left"
+              className="p-8 rounded-3xl bg-card border border-border hover:border-primary/50 transition-colors group flex flex-col items-start text-left"
             >
               <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-500">
                 <feature.icon className="w-6 h-6 stroke-[1.5]" />

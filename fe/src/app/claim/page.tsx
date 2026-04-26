@@ -12,7 +12,7 @@ export default function ClaimPage() {
       </div>
 
       <main className="flex-1 flex items-center justify-center w-full px-6 py-20">
-        <div className="max-w-md w-full bg-card border border-border rounded-none p-8 shadow-2xl relative z-10">
+        <div className="max-w-md w-full bg-card border border-border rounded-3xl p-8 shadow-2xl relative z-10">
            <div className="flex justify-center mb-6">
               <div className="w-16 h-16 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary relative">
                  <div className="absolute inset-0 rounded-full animate-ping bg-primary/10" />
@@ -28,12 +28,12 @@ export default function ClaimPage() {
            </div>
 
            <div className="space-y-4 mb-8">
-              <div className="p-4 bg-background border border-border rounded-none">
+              <div className="p-4 bg-background border border-border rounded-2xl">
                  <div className="text-xs uppercase font-mono tracking-wider text-muted-foreground mb-1">From</div>
                  <div className="font-medium text-sm truncate">8xF3g2vN...9a21 (Primary Estate)</div>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                 <div className="p-4 bg-background border border-border rounded-none flex flex-col items-center justify-center text-center">
+                 <div className="p-4 bg-background border border-border rounded-2xl flex flex-col items-center justify-center text-center">
                     <Wallet className="w-5 h-5 text-emerald-500 mb-2" />
                     <div className="font-medium text-sm">Financial Assets</div>
                  </div>

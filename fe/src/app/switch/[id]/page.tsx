@@ -11,14 +11,14 @@ export default function SwitchDetail({ params }: { params: { id: string } }) {
       <main className="flex-1 pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-5xl">
           <div className="mb-8">
-            <Link href="/dashboard" className="text-sm text-muted-foreground hover:text-foreground mb-6 inline-block transition-colors">
+            <Link href="/dashboard/owner" className="text-sm text-muted-foreground hover:text-foreground mb-6 inline-block transition-colors">
               &larr; Back to Dashboard
             </Link>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
               <div>
                 <h1 className="text-3xl font-sans tracking-tight text-foreground font-semibold flex items-center gap-3">
                   Primary Estate 
-                  <span className="px-2.5 py-0.5 rounded-none text-xs uppercase font-mono bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 shadow-[0_0_10px_rgba(16,185,129,0.1)]">Active</span>
+                  <span className="px-2.5 py-0.5 rounded-full text-xs uppercase font-mono bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 shadow-[0_0_10px_rgba(16,185,129,0.1)]">Active</span>
                 </h1>
                 <p className="text-xs font-mono text-muted-foreground mt-2">Contract ID: 8xF3g...9a21</p>
               </div>
@@ -34,7 +34,7 @@ export default function SwitchDetail({ params }: { params: { id: string } }) {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="p-6 rounded-none border border-border bg-card col-span-2">
+            <div className="p-6 rounded-3xl border border-border bg-card col-span-2">
               <h3 className="font-serif italic text-xl mb-4 flex items-center gap-2 border-b border-border/50 pb-2">
                 <Timer className="w-5 h-5 text-primary not-italic" /> Status & Engine
               </h3>
@@ -58,7 +58,7 @@ export default function SwitchDetail({ params }: { params: { id: string } }) {
               </div>
             </div>
 
-            <div className="p-6 rounded-none border border-border bg-card">
+            <div className="p-6 rounded-3xl border border-border bg-card">
                <h3 className="font-serif italic text-xl mb-4 flex items-center gap-2 border-b border-border/50 pb-2">
                 <UserCheck className="w-5 h-5 text-amber-500 not-italic" /> Beneficiaries
               </h3>
@@ -80,7 +80,7 @@ export default function SwitchDetail({ params }: { params: { id: string } }) {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-none border border-border bg-card">
+            <div className="p-6 rounded-3xl border border-border bg-card">
               <h3 className="font-serif italic text-xl mb-4 flex items-center gap-2 border-b border-border/50 pb-2">
                 <Copy className="w-5 h-5 text-emerald-500 not-italic" /> Financial Assets
               </h3>
@@ -102,7 +102,7 @@ export default function SwitchDetail({ params }: { params: { id: string } }) {
               </div>
             </div>
 
-            <div className="p-6 rounded-none border border-border bg-card relative overflow-hidden">
+            <div className="p-6 rounded-3xl border border-border bg-card relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
                  <ShieldAlert className="w-48 h-48" />
               </div>

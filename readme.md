@@ -107,6 +107,109 @@ graph TD
 - **Gas Abstraction:** MoonPay allows beneficiaries to cover gas fees with a credit card.
 
 
+
+---
+
+## 7. Dashboard Architecture & User Experience
+
+🔥 **KEY UX INSIGHT:** 
+- **Owner Dashboard = Control + Safety**
+- **Beneficiary Dashboard = Simplicity + Emotion**
+
+### 7.1 Owner Dashboard (Primary App Experience)
+*The core control panel of Relic, aligned with switch management, check-in, vault, and beneficiaries.*
+
+**A. Dashboard Overview (Top Section)**
+- **Global Status Card:** Instant status indicating safety (🟢 Active / 🟡 Warning / 🔴 Triggered).
+- **Next Trigger Countdown:** Live timer based on `triggerAt`.
+- **Last Check-in:** Timestamp of the last interaction.
+- **Quick Actions:** Primary Check-in button and "Create new switch".
+
+**B. Switch List (Core Section)**
+- Each switch is presented as a card containing:
+  - **Status badge:** ACTIVE / WARNING / TRIGGERED / EXECUTING / COMPLETED
+  - **Countdown:** Time until expiration.
+  - **Assets & Vault Summary:** Snapshot of secured assets and vault contents.
+  - **Quick Actions:** View Details, Edit, Cancel.
+
+**C. Switch Detail View**
+- **Status + Timeline:** Visual progression from Created → Active → Warning → Triggered → Executed.
+- **Beneficiaries Section:** List of assigned beneficiaries with percentage splits and claim status.
+- **Assets Section:** Breakdown of SOL, USDC, SPL tokens, and NFTs with estimated USD value.
+- **Message Vault:** Encrypted text, audio, or video messages locked until execution.
+- **File Vault:** Encrypted documents and files.
+- **Controls:** Ability to update beneficiaries, timer, or execute an emergency override within a 48h window.
+
+### 7.2 Beneficiary Dashboard (Claim Experience)
+*An emotional and simplified UX aligned with Privy onboarding to seamlessly claim and unlock inherited assets.*
+
+**A. Welcome / Claim Status**
+- Indicates the state of the inheritance: Pending Claim, Claimed, or Processing.
+
+**B. Assets Received (The Core Delivery)**
+- Displays total fiat-equivalent value and a breakdown of received crypto assets and NFTs.
+
+**C. Claim Action**
+- Primary call to action to trigger `/claim/redeem` and unlock the smart contract distribution.
+
+**D. Secured Messages & Files (The Emotional Hook)**
+- Upon claiming, the interface decrypts and plays final voice notes, video messages, and allows downloading of secured documents (passwords, photos).
+
+**E. Off-Ramping (MoonPay)**
+- Integrated actions to easily "Withdraw to bank" via MoonPay or send to another wallet, catering to non-crypto natives.
+
+### 7.3 State-Based UI Mapping
+**Owner States:**
+- `ACTIVE`: Green UI, ticking countdown.
+- `WARNING`: Yellow alerts, urging a check-in.
+- `TRIGGERED`: Red UI, locked for editing (48h emergency timelock).
+- `EXECUTING`: Processing state.
+- `COMPLETED`: Fully locked, post-execution.
+
+**Beneficiary States:**
+- `BEFORE CLAIM`: Call-to-action focused.
+- `CLAIMING`: Loading state.
+- `CLAIMED`: Vault unlocked, assets displayed.
+
+### 7.4 Data Contract (API Architecture)
+**Owner Dashboard API Response:**
+```json
+{
+  "switches": [
+    {
+      "id": "123",
+      "name": "Main Will",
+      "status": "ACTIVE",
+      "timeLeft": 86400000,
+      "assets": { "sol": 2.5, "usdc": 100 },
+      "beneficiariesCount": 2,
+      "messagesCount": 3,
+      "filesCount": 2
+    }
+  ]
+}
+```
+
+**Beneficiary Dashboard API Response:**
+```json
+{
+  "inheritances": [
+    {
+      "switchId": "123",
+      "status": "PENDING",
+      "totalValue": 1200,
+      "assets": [
+        { "type": "SOL", "amount": 1.5 },
+        { "type": "USDC", "amount": 500 }
+      ],
+      "hasClaimed": false,
+      "messages": [],
+      "files": []
+    }
+  ]
+}
+```
+
 ---
 
 > "Relic addresses a fundamental gap in the blockchain ecosystem: digital inheritance. It transforms blockchain from a system of ownership into a system of continuity."
