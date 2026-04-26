@@ -112,7 +112,7 @@ graph TD
 
 ## 7. Dashboard Architecture & User Experience
 
-🔥 **KEY UX INSIGHT:** 
+ **KEY UX INSIGHT:** 
 - **Owner Dashboard = Control + Safety**
 - **Beneficiary Dashboard = Simplicity + Emotion**
 
@@ -120,7 +120,7 @@ graph TD
 *The core control panel of Relic, aligned with switch management, check-in, vault, and beneficiaries.*
 
 **A. Dashboard Overview (Top Section)**
-- **Global Status Card:** Instant status indicating safety (🟢 Active / 🟡 Warning / 🔴 Triggered).
+- **Global Status Card:** Instant status indicating safety (Active /  Warning /  Triggered).
 - **Next Trigger Countdown:** Live timer based on `triggerAt`.
 - **Last Check-in:** Timestamp of the last interaction.
 - **Quick Actions:** Primary Check-in button and "Create new switch".
