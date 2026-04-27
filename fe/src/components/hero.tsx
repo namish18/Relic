@@ -37,7 +37,7 @@ export function Hero() {
         
       </motion.div>
 
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center z-10 relative pointer-events-none">
+      <div className="w-full max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24 grid lg:grid-cols-2 gap-16 items-center z-10 relative pointer-events-none">
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
