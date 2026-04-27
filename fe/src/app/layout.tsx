@@ -27,7 +27,7 @@ export default function RootLayout({
       className={`${cormorant.variable} h-full antialiased suppressHydrationWarning`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

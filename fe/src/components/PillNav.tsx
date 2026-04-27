@@ -30,11 +30,16 @@ const PillNav: React.FC<PillNavProps> = ({
   rightSlot,
 }) => {
   const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // ─── derive colours from the Relic golden-black design tokens ───────────────
   // Light: warm cream bg / dark text / gold primary
   // Dark : near-black bg / cream text / gold primary
-  const isDark = resolvedTheme === "dark";
+  const isDark = mounted ? resolvedTheme === "dark" : true;
 
   // baseColor   → pill-bar container background
   // pillColor   → individual pill background (slightly different from base)
@@ -142,6 +147,7 @@ const PillNav: React.FC<PillNavProps> = ({
     return () => window.removeEventListener("resize", onResize);
     // Re-run layout when theme changes so circles repaint with new colours
   }, [items, ease, initialLoadAnimation, isDark]);
+
 
   // ─── hover handlers ───────────────────────────────────────────────────────────
   const handleEnter = (i: number) => {
