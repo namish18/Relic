@@ -34,6 +34,10 @@ const beneficiarySchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    privyUserId: {
+      type: String,
+      trim: true,
+    },
   },
   { timestamps: true }
 );

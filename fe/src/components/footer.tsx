@@ -102,7 +102,7 @@ export function Footer() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black z-[1]" />
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 flex flex-col items-center relative z-10 w-full">
+        <div className="w-full max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24 flex flex-col items-center relative z-10">
 
           {/* Heading */}
           <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-[#D4AF67] drop-shadow-2xl">

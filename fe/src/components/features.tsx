@@ -58,7 +58,7 @@ const item = {
 export function Features() {
   return (
     <section id="features" className="py-32 bg-secondary/30 relative">
-      <div className="container mx-auto px-6">
+      <div className="w-full max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24">
         <div className="max-w-3xl mx-auto text-center mb-20">
           <h2 className="text-sm font-mono tracking-widest text-primary uppercase mb-4">
             Platform Capabilities

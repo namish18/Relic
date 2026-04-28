@@ -1,14 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Wallet, Mail, Key, ArrowRight, ShieldCheck, User } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
+import { useSIWS } from "@/hooks/useSIWS";
 
 export function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [step, setStep] = useState<"role-select" | "owner-login" | "beneficiary-email" | "beneficiary-otp">("role-select");
   const [email, setEmail] = useState("");
   const router = useRouter();
+  const { publicKey, connected, disconnect } = useWallet();
+  const { setVisible } = useWalletModal();
+  const { signIn, isAuthenticating } = useSIWS();
+
+  // When wallet connects while modal is on owner-login step, auto-trigger SIWS
+  useEffect(() => {
+    if (connected && publicKey && step === "owner-login" && isOpen) {
+      (async () => {
+        const token = await signIn();
+        if (token) {
+          router.push("/dashboard/owner");
+          handleClose();
+        }
+      })();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [connected, publicKey, step, isOpen]);
 
   const handleClose = () => {
     // slight delay to let exit animation finish before resetting step
@@ -16,11 +36,22 @@ export function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
     onClose();
   };
 
-  const handlePhantomLogin = () => {
-    // Simulate Phantom login
-    router.push("/dashboard/owner");
-    handleClose();
-  };
+  const handlePhantomLogin = useCallback(() => {
+    if (connected && publicKey) {
+      // Already connected — trigger SIWS directly
+      (async () => {
+        const token = await signIn();
+        if (token) {
+          router.push("/dashboard/owner");
+          handleClose();
+        }
+      })();
+    } else {
+      // Open the wallet modal to connect
+      setVisible(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [connected, publicKey, signIn, router, setVisible]);
 
   const handleOtpSubmit = () => {
     // Simulate OTP submit

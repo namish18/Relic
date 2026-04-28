@@ -33,7 +33,7 @@ const steps = [
 export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-32 relative overflow-hidden bg-background">
-      <div className="container mx-auto px-6">
+      <div className="w-full max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="max-w-xl">
             <h2 className="text-sm font-mono tracking-widest text-primary uppercase mb-4">
@@ -47,7 +47,7 @@ export function HowItWorks() {
               From the moment you configure your switch, the protocol acts as an unyielding executor, carrying out your precise programming without intermediaries or delay.
             </p>
 
-            <div className="space-y-12 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
+            <div className="space-y-12 relative before:absolute before:top-0 before:bottom-0 before:left-6 before:-translate-x-px before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
               {steps.map((step, idx) => (
                 <motion.div
                   key={idx}
@@ -55,12 +55,12 @@ export function HowItWorks() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: idx * 0.1, duration: 0.6 }}
-                  className="relative flex items-center md:justify-normal"
+                  className="relative flex items-start"
                 >
                   <div className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-primary bg-background text-primary font-mono font-medium text-sm z-10 shrink-0 mr-6">
                     {step.num}
                   </div>
-                  <div>
+                  <div className="pt-2">
                     <h4 className="text-xl font-medium text-foreground mb-2">{step.title}</h4>
                     <p className="text-muted-foreground">{step.desc}</p>
                   </div>
