@@ -130,7 +130,7 @@ export default function ClaimSwitchPage() {
                 </h2>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   You have been mathematically verified as a beneficiary for an
-                  enacted Relic contract.
+                  enacted <span className="font-relic tracking-wide font-normal">Relic</span> contract.
                 </p>
               </div>
 

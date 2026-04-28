@@ -6,6 +6,13 @@
 
 /* Font Faces */
 @font-face {
+  font-family: 'Rosehot';
+  font-style: normal;
+  font-display: swap;
+  src: url('/Rosehot.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Cal Sans';
   font-style: normal;
   font-display: swap;
@@ -98,6 +105,7 @@
   --radius-xl: var(--radius);
   --font-sans: "Cal Sans", "Satoshi", "Matter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cormorant);
+  --font-relic: "Rosehot", ui-serif;
 }
 
 * {
@@ -106,6 +114,10 @@
 body {
   @apply bg-background text-foreground;
   font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.font-relic {
+  font-family: 'Rosehot', serif !important;
 }
 
 ::selection {

@@ -24,10 +24,10 @@ export default function DocsPage() {
               <span>Documentation</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-serif font-medium mb-6 tracking-tight">
-              Understanding Relic
+              Understanding <span className="font-relic tracking-wide font-normal">Relic</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              Relic is a decentralized digital inheritance protocol built on Solana. 
+              <span className="font-relic tracking-wide font-normal">Relic</span> is a decentralized digital inheritance protocol built on Solana. 
               It ensures your digital legacy is preserved and transferred according to your wishes.
             </p>
           </header>
@@ -69,7 +69,7 @@ export default function DocsPage() {
               </h2>
               <div className="prose prose-invert max-w-none">
                 <p className="text-lg text-muted-foreground mb-6">
-                  At its heart, Relic operates as a <strong>Dead Man's Switch</strong>. It's a simple but powerful logic: 
+                  At its heart, <span className="font-relic tracking-wide font-normal">Relic</span> operates as a <strong>Dead Man's Switch</strong>. It's a simple but powerful logic: 
                   "If I don't check in for X amount of time, execute these instructions."
                 </p>
                 <div className="space-y-8 mt-10">
@@ -139,7 +139,7 @@ export default function DocsPage() {
                       <h3 className="text-lg font-medium">Non-Custodial Design</h3>
                     </div>
                     <p className="text-muted-foreground leading-relaxed">
-                      Relic never has access to your funds or secrets. The smart contract acts as a 
+                      <span className="font-relic tracking-wide font-normal">Relic</span> never has access to your funds or secrets. The smart contract acts as a 
                       trustless escrow that only moves assets based on the conditions you set.
                     </p>
                   </div>
@@ -174,15 +174,15 @@ export default function DocsPage() {
                 {[
                   {
                     q: "What happens if I lose access to my wallet?",
-                    a: "Relic allows you to set up 'Recovery Buddies'—trusted individuals who can help you reset your switch if you lose your primary access, or you can use your recovery phrase to regain control."
+                    a: "<span className=\"font-relic tracking-wide font-normal\">Relic</span> allows you to set up 'Recovery Buddies'—trusted individuals who can help you reset your switch if you lose your primary access, or you can use your recovery phrase to regain control."
                   },
                   {
                     q: "Can I cancel my switch at any time?",
-                    a: "Yes. You have full control over your Relic Switch. You can update beneficiaries, change the timer, or completely dismantle the switch at any time as long as you are active."
+                    a: "Yes. You have full control over your <span className=\"font-relic tracking-wide font-normal\">Relic</span> Switch. You can update beneficiaries, change the timer, or completely dismantle the switch at any time as long as you are active."
                   },
                   {
-                    q: "Is there a fee for using Relic?",
-                    a: "Relic charges a small initialization fee and a tiny percentage of assets processed during execution to maintain the decentralized crank network that monitors switches."
+                    q: "Is there a fee for using <span className=\"font-relic tracking-wide font-normal\">Relic</span>?",
+                    a: "<span className=\"font-relic tracking-wide font-normal\">Relic</span> charges a small initialization fee and a tiny percentage of assets processed during execution to maintain the decentralized crank network that monitors switches."
                   }
                 ].map((item, i) => (
                   <div key={i} className="border-b border-border pb-6">
@@ -203,7 +203,7 @@ export default function DocsPage() {
               <h2 className="text-3xl font-serif font-medium mb-6">Ready to secure your legacy?</h2>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium text-lg transition-all hover:scale-105 shadow-xl shadow-primary/20">
-                  Create your Relic
+                  Create your <span className="font-relic tracking-wide font-normal">Relic</span>
                 </button>
                 <button className="px-8 py-4 rounded-full border border-border bg-background text-foreground font-medium text-lg hover:bg-muted transition-colors">
                   Contact Support

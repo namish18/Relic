@@ -281,7 +281,7 @@ const PillNav: React.FC<PillNavProps> = ({
         href="/"
         aria-label="Home"
         ref={logoRef}
-        className="inline-flex items-center gap-2 px-4 rounded-full border font-serif text-xl font-medium tracking-wide transition-colors shrink-0"
+        className="inline-flex items-center gap-2 px-4 rounded-full border font-relic text-xl font-medium tracking-wide transition-colors shrink-0"
         style={{
           height:     "var(--pn-h)",
           background: "var(--pn-base)",

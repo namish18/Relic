@@ -86,7 +86,7 @@ export function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             {step === "role-select" && (
               <div className="flex flex-col gap-6">
                 <div>
-                  <h2 className="text-2xl font-sans font-semibold text-foreground mb-2">Welcome to Relic</h2>
+                  <h2 className="text-2xl font-sans font-semibold text-foreground mb-2">Welcome to <span className="font-relic tracking-wide font-normal">Relic</span></h2>
                   <p className="text-muted-foreground">Please select how you want to log in.</p>
                 </div>
 

@@ -23,7 +23,7 @@ export default function ClaimPage() {
            <div className="text-center mb-8">
               <h2 className="text-2xl font-serif italic text-foreground mb-2">Notice of Transfer</h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                 You have been mathematically verified as a beneficiary for an enacted Relic contract.
+                 You have been mathematically verified as a beneficiary for an enacted <span className="font-relic tracking-wide font-normal">Relic</span> contract.
               </p>
            </div>
 

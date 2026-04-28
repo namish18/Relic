@@ -41,7 +41,7 @@ export default function BeneficiaryDashboardPage() {
               <Gift className="w-12 h-12 text-primary mx-auto mb-4" />
               <h2 className="text-2xl font-medium text-foreground mb-2">You have received a digital inheritance</h2>
               <p className="text-muted-foreground max-w-md mx-auto mb-6">
-                A Relic switch has been triggered, unlocking assets and messages designated for you.
+                A <span className="font-relic tracking-wide font-normal">Relic</span> switch has been triggered, unlocking assets and messages designated for you.
               </p>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20 text-sm font-mono uppercase tracking-wider">
                 <AlertCircle className="w-4 h-4" /> Pending Claim

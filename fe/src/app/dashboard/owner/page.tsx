@@ -32,7 +32,7 @@ export default function OwnerDashboardPage() {
                 Owner Dashboard
               </h1>
               <p className="text-muted-foreground">
-                Manage your active Relics and secure your digital legacy.
+                Manage your active <span className="font-relic tracking-wide font-normal">Relic</span>s and secure your digital legacy.
               </p>
             </div>
           </div>

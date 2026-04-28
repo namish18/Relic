@@ -106,11 +106,11 @@ export function Footer() {
 
           {/* Heading */}
           <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-[#D4AF67] drop-shadow-2xl">
-            Stay Relic
+            Stay <span className="font-relic tracking-wide font-normal">Relic</span>
           </h2>
 
           <p className="text-zinc-200 text-lg md:text-xl mb-12 text-center max-w-2xl font-medium drop-shadow-md">
-            Join Relic&apos;s Inner Circle for Exclusive Updates &amp; Alpha.
+            Join <span className="font-relic tracking-wide font-normal">Relic</span>&apos;s Inner Circle for Exclusive Updates &amp; Alpha.
           </p>
 
           {/* Email Input */}
@@ -152,7 +152,7 @@ export function Footer() {
 
           {/* Copyright */}
           <p className="text-zinc-400 text-sm text-center">
-            © 2026 Relic. All rights reserved.
+            © 2026 <span className="font-relic tracking-wide font-normal">Relic</span>. All rights reserved.
           </p>
         </div>
       </footer>

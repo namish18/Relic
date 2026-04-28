@@ -321,7 +321,7 @@ export default function CreateWizard() {
                     <div>
                       <h4 className="text-sm font-medium text-foreground">Arcium Encrypted Compute</h4>
                       <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                        Your message is encrypted client-side before leaving your browser. Not even the Relic protocol can read it. It is unlocked only via on-chain execution through a Multi-Party Execution (MXE) computation.
+                        Your message is encrypted client-side before leaving your browser. Not even the <span className="font-relic tracking-wide font-normal">Relic</span> protocol can read it. It is unlocked only via on-chain execution through a Multi-Party Execution (MXE) computation.
                       </p>
                     </div>
                   </div>
@@ -381,7 +381,7 @@ export default function CreateWizard() {
                   <div className="p-5 bg-primary/5 rounded-2xl border border-primary/20 flex items-start gap-3">
                     <ShieldCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <p className="text-xs text-muted-foreground leading-relaxed">
-                      By confirming, you authorize Relic to deploy a smart contract to Solana Devnet via your connected Phantom wallet. A small gas fee (~0.005 SOL) will be charged.
+                      By confirming, you authorize <span className="font-relic tracking-wide font-normal">Relic</span> to deploy a smart contract to Solana Devnet via your connected Phantom wallet. A small gas fee (~0.005 SOL) will be charged.
                     </p>
                   </div>
                 </div>
