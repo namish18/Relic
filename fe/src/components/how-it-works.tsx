@@ -33,7 +33,7 @@ const steps = [
 export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-32 relative overflow-hidden bg-background">
-      <div className="container mx-auto px-6">
+      <div className="w-full max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="max-w-xl">
             <h2 className="text-sm font-mono tracking-widest text-primary uppercase mb-4">
