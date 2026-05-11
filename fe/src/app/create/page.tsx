@@ -30,6 +30,7 @@ const STEPS = [
 
 export default function CreateWizard() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [switchName, setSwitchName] = useState("");
   const [selectedDays, setSelectedDays] = useState(90);
   const [beneficiaries, setBeneficiaries] = useState([
     { email: "", split: 100 },
@@ -140,16 +141,28 @@ export default function CreateWizard() {
           {/* Step Content */}
           <div className="bg-card border border-border rounded-3xl p-6 sm:p-10 shadow-sm">
 
-            {/* STEP 1: Timer */}
+            {/* STEP 1: Basic Info & Timer */}
             {currentStep === 1 && (
               <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
                 <h2 className="text-2xl font-medium font-sans mb-2 flex items-center gap-3">
-                  <Timer className="w-6 h-6 text-primary" /> Step 1: Inactivity Timer
+                  <Timer className="w-6 h-6 text-primary" /> Step 1: Basic Info & Timer
                 </h2>
                 <p className="text-muted-foreground text-sm mb-8">
-                  Configure how long the smart contract should wait before assuming inactivity and triggering the execution pipeline.
+                  Name your will and configure how long the smart contract should wait before assuming inactivity and triggering the execution pipeline.
                 </p>
                 <div className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-medium mb-3 text-foreground">
+                      Will Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. My Primary Will"
+                      value={switchName}
+                      onChange={(e) => setSwitchName(e.target.value)}
+                      className="w-full bg-background border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors mb-2"
+                    />
+                  </div>
                   <div>
                     <label className="block text-sm font-medium mb-3 text-foreground">
                       Select Threshold
@@ -196,7 +209,7 @@ export default function CreateWizard() {
                   <Users className="w-6 h-6 text-primary" /> Step 2: Beneficiaries
                 </h2>
                 <p className="text-muted-foreground text-sm mb-8">
-                  Add the people who will receive your assets. They will be onboarded via Privy with just their email address.
+                  Add the people who will receive your assets. They will be onboarded and selected through their Mail ID.
                 </p>
                 <div className="space-y-4">
                   {beneficiaries.map((ben, i) => (
@@ -204,16 +217,17 @@ export default function CreateWizard() {
                       key={i}
                       className="flex gap-3 items-start p-4 bg-secondary/30 rounded-2xl border border-border/50"
                     >
-                      <div className="flex-1 space-y-3">
+                      <div className="flex-1 space-y-2">
+                        <label className="text-xs font-medium text-muted-foreground ml-1">Nominee Mail ID</label>
                         <input
                           type="email"
-                          placeholder="beneficiary@email.com"
+                          placeholder="nominee@email.com"
                           value={ben.email}
                           onChange={(e) => updateBeneficiary(i, "email", e.target.value)}
                           className="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors"
                         />
                       </div>
-                      <div className="flex items-center gap-2 shrink-0 pt-0.5">
+                      <div className="flex items-center gap-2 shrink-0 pt-6">
                         <input
                           type="number"
                           min={0}
@@ -238,7 +252,7 @@ export default function CreateWizard() {
                     onClick={addBeneficiary}
                     className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-dashed border-border hover:border-primary/50 text-sm text-muted-foreground hover:text-foreground transition-colors w-full justify-center"
                   >
-                    <Plus className="w-4 h-4" /> Add Beneficiary
+                    <Plus className="w-4 h-4" /> Add Nominee
                   </button>
                   <p className="text-xs text-muted-foreground">
                     Total split must equal 100%. Remaining:{" "}
@@ -343,6 +357,11 @@ export default function CreateWizard() {
                 </p>
                 <div className="space-y-4">
                   {[
+                    {
+                      label: "Will Name",
+                      value: switchName || "Untitled Will",
+                      sub: "Identifier for your digital will",
+                    },
                     {
                       label: "Inactivity Timer",
                       value: `${selectedDays} days`,
